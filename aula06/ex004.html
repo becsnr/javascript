@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aula 06 - Tratamento de Dados</h1>
+    <h2>Formatando Strings</h2>
+    <p>
+        <ul>
+            <li>'Eu estou aprendendo s' -> não faz interpolação</li>
+            <li>'Eu estou aprendendo ' + s -> usa concatenação</li>
+            <li>`Eu estou aprendendo ${s}` -> usa template string</li>
+        </ul>
+    </p>
+    <p>
+        <ul>
+            <li>s.length -> tamanho da string</li>
+            <li>s.toUpperCase() -> tudo para maiúsculas</li>
+            <li>s.toLowerCase() -> tudo para minúsculas</li>
+            <li>s.repeat() -> para repetir quantas vezes quiser</li>
+        </ul>
+    </p>
+    <p>
+        <ul>
+            <li>n.toFixed() -> pra ter casa decimal (tipo 2 casas)</li>
+            <li>n.toFixed(2).replace('.', ',') -> pra trocar o ponto pela vírgula</li>
+            <li>n.toLocateString('pt-br', {style: 'currency', currency: 'BRL'}) -> pra mostrar o real, salário</li>
+        </ul>
+    </p>
+
+    <h2>RESULTADO DO SCRIPT</h2>
+
+    <script>
+        var nome = prompt('Qual é seu nome?')
+        document.write(`Olá, ${nome}! Seu nome tem ${nome.length} letras<br>`)
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}<br>`)
+        document.write(`Seu nome em minúsculas é ${nome.toLocaleLowerCase()}`)
+    </script>
+</body>
+</html>
