@@ -66,3 +66,12 @@ strong {
 .pontinho {
     border: dashed 1px;
 }
+
+.relacional {
+    background-color: rgba(128, 128, 128, 0.562);
+    padding: 5px;
+}
+
+.coment {
+    color: gray;
+}

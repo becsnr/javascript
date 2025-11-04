@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <h2>Relacionais</h2>
+    <p>5 <span class="sinais"> ></span> 2 <span class="emoji">&#10140</span> <span class="relacional"> true </span></p>
+
+    <p>7 <span class="sinais"> <</span> 4 <span class="emoji">&#10140</span> <span class="relacional"> false </span></p>
+
+    <p>8 <span class="sinais"> >=</span> 8 <span class="emoji">&#10140</span> <span class="relacional"> true </span></p>
+
+    <p>9 <span class="sinais"> <=</span> 7 <span class="emoji">&#10140</span> <span class="relacional"> false </span></p>
+
+    <p>5 <span class="sinais"> ==</span> 5 <span class="emoji">&#10140</span> <span class="relacional"> true </span></p>
+
+    <p>4 <span class="sinais"> !=</span> 4 <span class="emoji">&#10140</span> <span class="relacional"> false </span></p>
+
+    <h3>// Exemplos</h3>
+    <p>preço <strong>>=</strong> <span class="emoji"> 200.50</span> <span class="coment">// o preço é maior ou igual a 200.50?</span></p>
+
+    <p>idade <strong><</strong> <span class="emoji"> 18</span> <span class="coment">// a idade é menor do que 18?</span></p>
+
+    <p>curso <strong>==</strong> <span class="emoji"> 'JavaScript'</span> <span class="coment">// o curso é JavaScript</span></p>
+
+    <p>n1 <strong>!=</strong> <span class="emoji"> n2</span> <span class="coment">// o primeiro número é diferente do segundo?</span></p>
+
+    <h2>Identidade</h2>
+    <p>5 <span class="sinais"> ==</span> 5 <span class="emoji">&#10140</span> <span class="relacional"> true </span></p>
+
+    <p>5 <span class="sinais"> ==</span> '5' <span class="emoji">&#10140</span> <span class="relacional"> true </span> <span class="coment"> // pq o sinal de igualdade ñ testa o tipo</span></p>
+
+    <p>5 <span class="sinais"> ===</span> '5' <span class="emoji">&#10140</span> <span class="relacional"> false </span> <span class="coment"> // usando o sinal de identico ele vai ver se são do mesmo valor e do mesmo tipo</span></p>
+
+    <p>5 <span class="sinais"> ===</span> 5 <span class="emoji">&#10140</span> <span class="relacional"> true </span></p>
+
+    <h2>Lógicos</h2>
+    <p><span class="sinais">!</span> negação</p>
+    <p><span class="sinais">&&</span> conjução <span class="coment">// "e" lógico</span></p>
+    <p><span class="sinais">||</span> disjunção <span class="coment">// "ou" lógico</span></p>
+
+    <h2>Precedência</h2>
+    <div class="passos">
+        <div class="seta"></div>
+        <div>
+            <p><span class="sinais">aritméticos</span></p>
+            <p><span class="sinais">relacionais</span></p>
+            <p><span class="sinais">!</span> </p>
+            <p><span class="sinais">&&</span> </p>
+            <p><span class="sinais">||</span> </p>
+        </div>
+    </div>
+
+    <h2>//Exemplo</h2>
+    <p>idade <strong>>=</strong> <span class="emoji">15</span> <strong>&&</strong> idade <strong><=</strong> <span class="emoji">17</span> <span class="coment">// a idade está entre 15 e 17?</span></p>
+
+    <p>estado <strong>==</strong> <span class="emoji">'RJ'</span> <strong>||</strong> estado <strong>==</strong> <span class="emoji">'SP'</span> <span class="coment">// o estado é RJ ou SP?</span></p>
+
+    <p>salário<strong> ></strong> <span class="emoji">1500</span> <strong>&&</strong> sexo <strong>!=</strong> <span class="emoji">'M'</span> <span class="coment">// o salário é acima de 1500 e não é homem?</span></p>
+
+    <h2>Ternário</h2>
+    <p><span class="relacional">teste</span> <span class="sinais">?</span> <span class="relacional">true</span> <span class="sinais">:</span> <span class="relacional">false</span></p>
+    <p>EXEMPLO</p>
+    <p><span class="relacional">média >= 7.0</span> <span class="sinais">?</span> <span class="relacional">"Aprovado"</span> <span class="sinais">:</span> <span class="relacional">"Reprovado"</span></p>
+    <p><span class="coment">// a média é maior ou igual a 7.0? Se for maior 'Aprovado', se não 'Reprovado'</span></p>
+</body>
+</html>
