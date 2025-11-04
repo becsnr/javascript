@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    background-color: white;
+    color: black;
+    width: 160px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.exemplo {
+    width: 450px;
+}
+
+.sinais {
+    background-color: rgb(167, 46, 66);
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.emoji {
+    color: yellow;
+}
+
+.passos {
+    display: flex;
+    gap: 15px;
+}
+
+.passos p {
+    flex-direction: column;
+}
+
+.seta {
+    font-size: 40px;
+    color: white;
+    animation: pular 3s infinite;
+}
+
+.seta::before {
+    content: "\2193";
+}
+
+@keyframes pular {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(100px);}
+    100% {transform: translateY(0);}
+}
+
+strong {
+    color: rgb(220, 28, 70);
+}
+
+.pontinho {
+    border: dashed 2px;
+}
