@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+</head>
+<body>
+    <!-- Converter minutos em horas e minutos
+            ex: 135 minutos -> 2hrs e 15min
+    -->
+    <script>
+        let num = Number(prompt('Digite um número')); // valor que será processado
+
+        // math.floor é uma função de programação que arredonda um número para baixo, para o menor número inteiro mais próximo.
+        let horas = Math.floor(num / 60); // calcula a hora contida em num
+
+        let min = num % 60; // qual é o resto qnd num é dividido por 60?
+
+        alert(`${horas}h e ${min}min`);
+    </script>
+</body>
+</html>
