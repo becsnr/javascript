@@ -28,19 +28,41 @@
             flex-direction: column;
             align-items: center;
             background-color: white;
-            width: 500px;
+            width: 400px;
             height: 50vh;
             top: 50%;
             left: 50%;
+            padding: 20px;
+            border-radius: 10px;
+            line-height: 2.5em;
             transform: translate(-50%, -50%);
         }
 
-        h1 {
-
+        label {
+            font-size: 1.2em;
         }
 
         input#pais {
-            width: 100px;
+            width: 140px;
+            height: 30px;
+            background-color: aliceblue;
+            border: 1px solid green;
+            border-radius: 5px;
+        }
+
+        #botao {
+            width: 140px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(3, 122, 3);
+            color: white;
+            font-weight: bolder;
+        }
+
+        #botao:hover {
+            cursor: pointer;
+            background-color: rgb(14, 157, 110);
         }
     </style>
 </head>
@@ -48,10 +70,10 @@
     <main>
         <div id="caixa">
             <h1>Nacionalidade</h1>
-            <div>
+            <div id="dados">
                 <label for="pais">Onde você vive?</label> <br>
                 <input type="text" name="pais" id="pais"> <br>
-                <input type="button" value="Verificar" onclick="verificar()">
+                <input type="button" value="Verificar" onclick="verificar()" id="botao">
                 <div id="res"></div>
             </div>
         </div>
