@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Hora do dia</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body id="body">
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+    <section>
+        <div id="texto"></div>
+        <div id="imagem"></div>
+    </section>
+
+    <script>
+        var agora = new Date();
+        var hora = agora.getHours();
+        var body = document.getElementById('body');
+        var imagem = document.querySelector('div#imagem');
+        var texto = document.querySelector('div#texto');
+        texto.innerHTML = `Agora são ${hora} horas.`;
+
+        if (hora < 5) {
+            imagem.style.background = "url(imgs/fotonoite.png) no-repeat center center /cover";
+            body.style.background = '#020911';
+        } else if (hora < 12) {
+            imagem.style.background = "url(imgs/fotomanhã.png) no-repeat center center /cover";
+        } else if (hora < 18) {
+            imagem.style.background = "url(imgs/fototarde.png) no-repeat center center /cover";
+            body.style.background = '#774448';
+        } else if (hora < 24) {
+            imagem.style.background = "url(imgs/fotonoite.png) no-repeat center center /cover";
+            body.style.background = '#001140';
+        }
+    </script>
+</body>
+</html>

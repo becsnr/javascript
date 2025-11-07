@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+body {
+    background-color: rgb(248, 216, 175);
+}
+
+header {
+    color: white;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.597);
+    text-align: center;
+    padding-top: 20px;
+    height: 60px;
+}
+
+section {
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.173);
+    margin: auto;
+    line-height: 4em;
+    text-align: center;
+}
+
+div#imagem {
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+}
