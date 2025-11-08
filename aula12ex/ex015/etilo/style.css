@@ -13,6 +13,7 @@ body {
 header h1 {
     color: white;
     text-align: center;
+    padding: 10px;
 }
 
 section {
@@ -37,4 +38,28 @@ section input[type="button"] {
     color: black;
     font-weight: bolder;
     
+}
+
+div#res {
+    display: none; /* começa escondido */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+div#res.show {
+    display: flex;
+}
+
+div#img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
