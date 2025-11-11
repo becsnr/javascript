@@ -21,7 +21,7 @@ header {
 section {
     background-color: white;
     width: 500px;
-    height: 300px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.173);
     margin: auto;
@@ -29,3 +29,14 @@ section {
     text-align: center;
 }
 
+div#dados input[type='number'] {
+    width: 50px;
+    text-align: center;
+}
+
+div#dados input[type='submit'] {
+    width: 100px;
+    border-radius: 5px;
+    border-color: blueviolet;
+    background-color: rgba(137, 43, 226, 0.167);
+}
