@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+body {
+    background-color: blueviolet;
+}
+
+header {
+    color: white;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.597);
+    text-align: center;
+    padding-top: 20px;
+    height: 60px;
+}
+
+section {
+    background-color: white;
+    width: 500px;
+    height: autox;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.173);
+    margin: auto;
+    line-height: 4em;
+    text-align: center;
+}
+
+div#dados input#num {
+    text-align: center;
+    width: 100px;
+}
+
+div#dados select#lista {
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+}
