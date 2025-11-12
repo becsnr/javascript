@@ -1,17 +1,19 @@
 function tabuada() {
-    var n = document.getElementById('num');
-    var tab = document.getElementById('tab');
+    let n = document.getElementById('num');
+    let tab = document.getElementById('tab');
 
     if (n.value === "") {
-        tab.innerHTML += 'Por favor, digite um número!';
+        alert('Por favor, digite um número!')
         return;
     }
 
-    var num = Number(n.value);
+    let num = Number(n.value);
     tab.innerHTML = "";
 
-    for (c = 0; c <= 10; c ++) {
-        var res = num * c;
-        tab.innerHTML += `${num} x ${c} = ${res} <br>`;
+    for (c = 1; c <= 10; c ++) {
+        let item = document.createElement('option'); // cria um elemento option (cada linha dentro do select)
+        item.text = `${num} x ${c} = ${num*c}`;
+        item.value = `tab${c}`; // define o valor do option (útil em outras linguagens)
+        tab.appendChild(item); // add o option como filho dentro do select (mostra na tela)
     }
 }

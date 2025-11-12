@@ -40,3 +40,9 @@ div#dados input[type='submit'] {
     border-color: blueviolet;
     background-color: rgba(137, 43, 226, 0.167);
 }
+
+div#res select#tab {
+    padding: 10px;
+    overflow-y: hidden; /* esconde a barra vertical */ 
+    border-radius: 10px;
+}
