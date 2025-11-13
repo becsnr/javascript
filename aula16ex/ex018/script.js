@@ -1,4 +1,5 @@
 let numeros = [];
+let res = document.getElementById('res');
 
 function adicionar() {
     let n = document.getElementById('num');
@@ -14,12 +15,13 @@ function adicionar() {
         let item = document.createElement('option');
         item.text = `Valor ${num} adicionado.`;
         lista.appendChild(item); 
+        res.innerHTML = ''; // qnd add outro num dps de finalizar, dai vai limpar o res
     }
     num.value = ''; // limpa o local de digitar
+    num.focus(); // o foco fica la na caixa de digitar
 }
 
 function finalizar() {
-    let res = document.getElementById('res');
 
     // verifica se digitou algum valor
     if (numeros.length == 0) {

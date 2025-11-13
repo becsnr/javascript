@@ -39,3 +39,7 @@ div#dados select#lista {
     border-radius: 10px;
     padding: 10px;
 }
+
+div#res {
+    line-height: 2em;
+}
