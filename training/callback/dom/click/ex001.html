@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicou!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: bisque;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 100vh;
+        }
+        p {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        button {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: burlywood;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crie um botão que, ao clicar, troca o texto de um <p> para “Clicou!”. -->
+    <section>
+        <p id="texto">Clique no botão abaixo</p>
+        <button type="button" id="botao">Clique Aqui</button>
+    </section>
+
+    <script>
+        let botao = document.getElementById('botao');
+        let texto = document.getElementById('texto');
+
+        botao.addEventListener("click", () => {
+            texto.innerHTML = 'Clicou!';
+        })
+    </script>
+</body>
+</html>
