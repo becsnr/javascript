@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ca763a;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 100vh;
+        }
+
+        div {
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            width: 100px;
+            text-align: center;
+            font-size: 15pt;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.382);
+        }
+
+        button {
+            width: 50px;
+            font-size: 1.4em;
+            border-radius: 5px;
+            background-color: burlywood;
+            border: none;
+            cursor: pointer;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.299);
+        }
+        button:hover {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <!-- Faça um contador: um botão “+” que aumenta um número mostrado na tela. -->
+    <section>
+        <h1>Contador</h1>
+        <div>
+            <p id="contar">0</p>
+        </div>
+        <button type="button">+</button>
+    </section>
+
+    <script>
+        const botao = document.querySelector('button');
+        const num = document.querySelector('#contar');
+        let contar = 0;
+
+        botao.addEventListener("click", () => {
+            contar++;
+            num.innerHTML = contar;
+        });
+    </script>
+</body>
+</html>
