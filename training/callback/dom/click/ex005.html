@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ca763a;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 100vh;
+        }
+
+        button {
+            width: 200px;
+            padding: 5px;
+            font-size: 1.4em;
+            border-radius: 5px;
+            background-color: burlywood;
+            border: none;
+            cursor: pointer;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.299);
+        }
+        button:hover {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <!-- (Desafio) Crie um botão que adiciona dinamicamente um novo botão à página; quando esse novo botão for clicado, ele deve mostrar um alert com “sou novo”. -->
+     <section id="area">
+        <button id="add" type="button">Adicionar botão</button>
+        
+     </section>
+
+     <script>
+        const btAdd = document.getElementById('add');
+        const area = document.getElementById('area');
+
+        btAdd.addEventListener("click", () => {
+            const btNew = document.createElement('button');
+            btNew.textContent = 'Clique!';
+            btNew.type = "button";
+
+            btNew.addEventListener("click", () => {
+                alert("SOU NOVO!");
+            });
+
+            area.appendChild(btNew);
+        });
+     </script>
+</body>
+</html>
