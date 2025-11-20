@@ -5,9 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        input {
+            width: 200px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        p {
+            font-size: 1.4em;
+        }
+    </style>
 </head>
 <body>
     <!-- Ao digitar num <input> mostre em tempo real o que o usuário está escrevendo (evento input). -->
-    
+    <section>
+        <input type="text" name="texto" id="texto" placeholder="Digite algo...">
+        <p id="res"></p>
+    </section>
+
+    <script>
+        const caixa = document.getElementById('texto');
+        const res = document.getElementById('res');
+
+        caixa.addEventListener("input", () => {
+            res.innerHTML = caixa.value;
+        });
+    </script>
 </body>
 </html>
