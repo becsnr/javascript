@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ca763a;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 100vh;
+        }
+        
+        button {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: burlywood;
+            font-weight: bolder;
+            cursor: pointer;
+            width: 100px;
+            font-size: 14pt;
+        }
+        button:hover {
+            background-color: blanchedalmond;
+        }
+
+        p {
+            color: rgba(222, 184, 135, 0.466);
+        }
+    </style>
+</head>
+<body>
+    <!-- Crie três botões (A, B, C). Ao clicar em cada um mostra no console qual foi clicado. -->
+     <section>
+        <button id="btA" class="botoes" type="button">Botão A</button>
+        <button id="btB" class="botoes" type="button">Botão B</button>
+        <button id="btC" class="botoes" type="button">Botão C</button>
+
+        <p>// abra o console para ver qual foi clicado</p>
+     </section>
+
+     <script>
+        const botoes = document.querySelectorAll(".botoes");
+        const btA = document.getElementById('btA');
+        const btB = document.getElementById('btB');
+        const btC = document.getElementById('btC');
+
+        botoes.forEach((botao) => {
+            botao.addEventListener("click", (e) => {
+                console.log("Você clicou em:", e.target.textContent);
+            });
+        });
+     </script>
+</body>
+</html>
