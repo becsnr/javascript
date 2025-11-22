@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div#campo {
+            flex-direction: row;
+        }
+
+        input {
+            width: 30px;
+            height: 20px;
+        }
+
+        label {
+            font-size: 1.2em;
+        }
+
+        div#texto {
+            background-color: aliceblue;
+            width: 150px;
+            text-align: center;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        #subtitulo {
+            background-color: blueviolet;
+            color: white;
+            padding: 5px;
+        }
+
+        #res {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crie um checkbox “Aceito”.
+        Se marcar → aparece “Marcado”.
+        Se desmarcar → aparece “Desmarcado”. -->
+    <section>
+        <div id="campo">
+            <input type="checkbox" name="aceito" id="aceito"><label for="aceito">ACEITO</label>
+        </div>
+        <div id="texto">
+            <p id="subtitulo">O campo está</p>
+            <p id="res"></p>
+        </div>
+    </section>
+
+    <script>
+        const aceito = document.getElementById('aceito');
+        const res = document.getElementById('res');
+
+        aceito.addEventListener('change', () => {
+            if (aceito.checked) {
+                res.innerHTML = 'Marcado';
+            } else {
+                res.innerHTML = 'Desmarcado';
+            }
+        });
+    </script>
+</body>
+</html>
