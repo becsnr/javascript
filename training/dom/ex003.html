@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #campo {
+            height: 20px;
+        }
+
+        div {
+            background-color: aliceblue;
+            width: 150px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        #subtitulo {
+            background-color: blueviolet;
+            color: white;
+            padding: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crie um input. Quando você digitar, mostre o valor dele em um <p>. -->
+    <section>
+        <input type="text" name="campo" id="campo" placeholder="Digite algo...">
+        <div>
+            <p id="subtitulo">Seu Texto:</p>
+            <p id="res"></p>
+        </div>
+    </section>
+
+    <script>
+        const campo = document.getElementById('campo');
+        const res = document.getElementById('res');
+
+        campo.addEventListener('input', () => {
+            res.innerText = campo.value;
+        })
+    </script>
+</body>
+</html>
