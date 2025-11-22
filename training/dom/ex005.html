@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div {
+            text-align: center;
+            line-height: 30px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        h1 {
+            background-color: blueviolet;
+            padding: 10px;
+            color: white;
+            text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.532);
+        }
+
+        p#res {
+            background-color: white;
+            margin-bottom: 5px;
+
+        }
+
+        button {
+            width: 30px;
+            height: 30px;
+            font-weight: bolder;
+            font-size: 1.2em;
+            border-radius: 5px;
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crie dois botões: + e -
+        Mostre o valor em um <p>.
+        O + aumenta, o – diminui. -->
+    <section>
+        <div>
+            <h1>Contador</h1>
+            <p id="res">0</p>
+            <button type="button" value="mais">+</button>
+            <button type="button" value="menos">-</button>
+        </div>
+    </section>
+
+    <script>
+        const res = document.getElementById('res');
+        const botoes = document.querySelectorAll('button');
+        let num = 0;
+
+        botoes.forEach(botao => {
+            botao.addEventListener('click', (e) => {
+                const operador = e.target.value;
+                
+                if (operador == 'mais') {
+                    num++;
+                    res.innerText = num;
+                } else if (operador == 'menos') {
+                    num--;
+                    res.innerText = num;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
