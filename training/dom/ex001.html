@@ -5,9 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
+    <style>
+        p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        button {
+            width: 50px;
+            padding: 3px;
+            border-radius: 5px;
+            background-color: #6c13c0;
+            color: white;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+
+        button:hover {
+            background-color: #8f42d6;
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- Crie um botão que, quando clicado, troca o texto de um <p> para:
+“Botão clicado!” -->
+    <section>
+        <p id="res">Clique no botão</p>
+        <button id="botao" type="button">Botão</button>
+    </section>
+
+    <script>
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        botao.addEventListener('click', () => {
+            res.innerHTML = 'Botão clicado!'
+        });
+    </script>
 </body>
 </html>
