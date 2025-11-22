@@ -15,18 +15,24 @@
     <!-- Tenha um checkbox “aceito”. Mostre “ok” apenas quando o checkbox for marcado (evento change). -->
      <section>
         <h1>Aceita Jesus?</h1>
-        <label for="check">
-            <input type="checkbox" name="check" id="check">
+        <label for="aceito">
+            <input type="checkbox" name="aceito" id="aceito">
             Aceito
         </label>
         <p id="res"></p>
      </section>
 
      <script>
-        const check = document.getElementById('check');
+        const aceito = document.getElementById('aceito');
         const res = document.getElementById('res');
 
-        check.addEventListener("")
+        aceito.addEventListener("change", () => {
+            if (aceito.checked) {
+                res.innerText = "Amém";
+            } else {
+                res.innerText = "";
+            }
+        });
      </script>
 </body>
 </html>
