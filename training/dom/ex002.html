@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: burlywood;
+        }
+
+        button {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #e8a650;
+            font-weight: bolder;
+            cursor: pointer;
+            width: 100px;
+            font-size: 14pt;
+        }
+        button#roxo:hover {
+            background-color: #ab72e1;
+        }
+        button#preto:hover {
+            background-color: #000000;
+            color: white;
+        }
+        button#rosa:hover {
+            background-color: #e6628e;
+        }
+    </style>
+</head>
+<body id="fundo">
+    <!-- Crie três botões: “Roxo”, “Preto”, “Rosa”.
+    Quando clicar em cada um, mude o fundo da página para aquela cor. -->
+    <section>
+        <h1 id="texto">Escolha a cor de fundo</h1>
+        <button id="roxo" class="botoes" type="button" value="purple">Roxo</button>
+        <button id="preto" class="botoes" type="button" value="black">Preto</button>
+        <button id="rosa" class="botoes" type="button" value="pink">Rosa</button>
+    </section>
+
+    <script>
+        const botoes = document.querySelectorAll('.botoes');
+        const fundo = document.getElementById('fundo');
+        const texto = document.getElementById('texto');
+
+        botoes.forEach(botao => {
+            botao.addEventListener('click', (e) => {
+            const cor = e.target.value;
+
+            if (cor == 'purple') {
+                fundo.style.background = '#ab72e1';
+                texto.style.color = '#410341';
+            } else if (cor == 'black') {
+                fundo.style.background = '#000000';
+                texto.style.color = 'white';
+            } else if (cor == 'pink') {
+                fundo.style.background = '#e6628e';
+                texto.style.color = '#691632';
+            }
+        });
+        })
+
+        
+    </script>
+</body>
+</html>
