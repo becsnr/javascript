@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        select {
+            width: 200px;
+            text-align: center;
+            height: 30px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- Um select (dropdown) com 3 opções; quando o valor mudar, mostre a opção selecionada. -->
+     <section>
+        <select name="cores" id="cores">
+            <option value="nenhum" selected>---- Selecione uma cor ----</option>
+            <option value="purple">Roxo</option>
+            <option value="black">Preto</option>
+            <option value="pink">Rosa</option>
+        </select>
+     </section>
+
+     <script>
+        const cores = document.getElementById('cores');
+
+        cores.addEventListener('change', () => {
+            console.log(`Opção selecionada: ${cores.value}`);
+        });
+     </script>
+</body>
+</html>
