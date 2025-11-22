@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #a06cd5;
+        }
+
+        section {
+            width: 90vw;
+            height: auto;
+            background-color: #d8b4f8; /* #fad7f7 */
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #4a148c;
+        }
+
+        input#campo {
+            width: 90vw;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 10px #a06cd54a;
+        }
+        input#add {
+            width: 100px;
+            padding: 5px;
+            border-radius: 5px;
+            border-color: #c08ff5;
+            background-color: #c794fe;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        ul {
+            width: 90vw;
+            list-style: none;
+            text-align: center;
+            line-height: 2em;
+            gap: 20px;
+            background-color: #b275e8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crie um input + botão “Adicionar”. Quando clicar, adicione o texto do input dentro de uma <ul>. -->
+    <section>
+        <h1>Lista de Tarefas</h1>
+        <input type="text" name="campo" id="campo" placeholder="Digite algo...">
+        <input type="submit" value="Adicionar" id="add">
+        <p id="situacao"></p>
+        <ul id="lista">
+            <li>teste</li>
+            <li>teste</li>
+        </ul>
+    </section>
+
+    <script>
+
+    </script>
+</body>
+</html>
