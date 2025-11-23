@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #a06cd5;
+        }
+
+        section {
+            width: 90%;
+            height: auto;
+            background-color: #d8b4f8; /* #fad7f7 */
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #4a148c;
+        }
+
+        input#campo {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: inset 1px 1px 10px #a06cd54a;
+        }
+        button#add {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border-color: #c08ff5;
+            background-color: #c794fe;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        ul {
+            width: 90vw;
+            list-style: none;
+            text-align: center;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        ul li {
+            background-color: #b275e8;
+            line-height: 2em;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.152);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cada item da lista criada no ex anterior, quando clicado, deve ser removido. -->
+    <section>
+        <h1>Lista de Tarefas</h1>
+        <input type="text" name="campo" id="campo" placeholder="Digite algo...">
+        <button type="button" id="add">Adicionar</button>
+        <p id="situacao"></p>
+        <ul id="lista">
+            
+        </ul>
+    </section>
+
+    <script>
+        const campo = document.getElementById('campo');
+        const add = document.getElementById('add');
+        const situacao = document.getElementById('situacao');
+        const lista = document.getElementById('lista');
+
+        add.addEventListener('click', () => {
+            const texto = campo.value.trim();
+
+            if (texto === "") {
+                situacao.innerHTML = 'Digite uma tarefa!';
+                return;
+            }
+            
+            const item = document.createElement('li');
+            item.textContent = texto;
+
+            lista.appendChild(item);
+
+            item.addEventListener("click", (e) => {
+                e.target.remove();
+            });
+
+            campo.value = "";
+            situacao.innerHTML = "Tarefa adicionada!"
+        });
+    </script>
+</body>
+</html>
