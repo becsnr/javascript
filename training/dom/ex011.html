@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Dinamicamente</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            line-height: 1.5em;
+        }
+
+        #container div {
+            background-color: aliceblue;
+            padding: 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+            text-align: center;
+            box-shadow: 1px 1px 10px #2403444a;
+        }
+
+        #container img {
+            height: 150px;
+            width: 100%;
+            background-color: #80808010;
+        }
+
+        button {
+            width: 100px;
+            padding: 2px;
+            border-radius: 5px;
+            border: none;
+            background-color: #d8b4f8;
+            font-weight: bolder;
+            box-shadow: 1px 1px 2px #4408814a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Criar cards dinamicamente
+    Crie um array de objetos; Mostre cada produto na tela em um card criado via JavaScript:
+        nome
+        preço
+        botão “Comprar” -->
+    <section>
+        <div id="container"></div>
+    </section>
+
+    <script>
+        const container = document.getElementById('container');
+        let produtos = [
+            { nome: "TV", preco: 2000 },
+            { nome: "Notebook", preco: 3500 },
+            { nome: "Mouse", preco: 80 }
+        ];
+
+        produtos.forEach(p => {
+            let card = document.createElement('div');
+            let img = document.createElement('img');
+            let nome = document.createElement('h2');
+            let preco = document.createElement('p');
+            let botao = document.createElement('button');
+
+            if (p.nome == "TV") {
+                img.src = 'ex011-imgs/tv.png'
+            } else if (p.nome == "Notebook") {
+                img.src = 'ex011-imgs/notebook.png';
+            } else if (p.nome == "Mouse") {
+                img.src = 'ex011-imgs/mouse.png';
+            }
+
+            nome.innerHTML = p.nome;
+            preco.innerHTML = `R$ ${p.preco},00`;
+            botao.innerHTML = "Comprar";
+
+            card.appendChild(img);
+            card.appendChild(nome);
+            card.appendChild(preco);
+            card.appendChild(botao);
+
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
