@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: aliceblue;
+        }
+
+        select {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Select que muda a cor de um quadrado
+        Crie um quadrado (div).
+        Um <select> com 3 cores.
+        Quando escolher, muda só a cor do quadrado, não da página. -->
+
+    <section>
+        <div id="campo"></div>
+        <select name="lista" id="cores">
+            <option value="#" selected>-- ESCOLHA UMA COR --</option>
+            <option value="purple">Roxo</option>
+            <option value="black">Preto</option>
+            <option value="pink">Rosa</option>
+        </select>
+    </section>
+
+    <script>
+        const campo = document.getElementById('campo');
+        const cores = document.getElementById('cores');
+
+        cores.addEventListener('change', (e) => {
+           const cor = e.target.value; 
+
+           if (cor == "purple") {
+            campo.style.background = 'blueviolet';
+           } else if (cor == "black") {
+            campo.style.background = 'black';
+           } else if (cor == "pink") {
+            campo.style.background = 'deeppink';
+           }
+        });
+    </script>
+</body>
+</html>
