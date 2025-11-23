@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div {
+            width: 50%;
+            height: 200px;
+            background-color: #d8b4f8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 10px #2403444a;
+        }
+
+        input {
+            box-shadow: inset 1px 1px 10px #a06cd54a;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 300px;
+        }
+
+        p {
+            color: #4a148c;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Input de texto. Enquanto digita, aparecer: “Você digitou X caracteres.” -->
+    <section>
+        <div>
+            <input type="text" name="texto" id="texto" placeholder="Digite algo...">
+            <p id="res">Você digitou 0 caracteres</p>
+        </div>
+    </section>
+
+    <script>
+        const texto = document.getElementById('texto');
+        const res = document.getElementById('res');
+
+        texto.addEventListener('input', () => {
+            const total = texto.value.length;
+            res.innerText = `Você digitou ${total} caracteres`;
+        });
+    </script>
+</body>
+</html>
