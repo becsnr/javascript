@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div {
+            background: url('jk1.jpg') no-repeat center center /cover;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Trocar imagem ao passar o mouse.
+        Duas imagens: uma padrão, outra quando o mouse passa por cima.
+        Use mouseenter e mouseleave. -->
+    <section>
+        <div id="imagem"></div>
+    </section>
+
+    <script>
+        const imagem = document.getElementById('imagem');
+
+        imagem.addEventListener('mouseenter', () => {
+            imagem.style.backgroundImage = 'url(jk2.jpg)';
+        });
+
+        imagem.addEventListener('mouseleave', () => {
+            imagem.style.backgroundImage = 'url(jk1.jpg)';
+        })
+    </script>
+</body>
+</html>
