@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { /* cores */
+            --lilas-claro: #E6D6FF;
+            --lilas-medio: #D0B3FF;
+            --roxo-suave: #B799FF;
+            --rosinha-pastel: #F8D8E7;
+            --creme: #FFF8FB;
+            --roxo-escuro: #60039da1;
+        }
+
+        #caixa-login {
+            background-color: var(--lilas-medio);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px var(--roxo-escuro);
+            text-align: center;
+            width: 50%;
+            height: auto;
+        }
+
+        h1 {
+            color: var(--roxo-escuro);
+            
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        form input {
+            padding: 5px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 1px 1px 1px var(--roxo-escuro);
+            width: 100%;
+            height: 30px;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #5f039dfa;
+        }
+
+        p a#esquecer {
+            font-size: .7em;
+            font-weight: bolder;
+        }
+
+        a#esquecer:hover {
+            text-decoration: underline;
+        }
+
+        button#entrar {
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+            height: 40px;
+            background-color: var(--roxo-escuro);
+            color: var(--creme);
+            font-weight: bolder;
+            font-size: 1em;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 1px #0000008b;
+            cursor: pointer;
+        }
+
+        .erro {
+            color: var(--roxo-escuro);
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Crie um formulário com: nome (obrigatório); email (obrigatório); senha (mínimo 6 caracteres); 
+    Se tentar enviar: mostrar erro perto do campo errado; só enviar se tudo estiver certinho -->
+    
+    <section>
+        <div id="caixa-login">
+            <h1>Login</h1>
+            <form method="post" id="formulario">
+                <input type="email" name="usuario" id="email" placeholder="E-mail" required>
+                <span class="erro" id="erro-email"></span>
+
+                <input type="password" name="senha" id="senha" placeholder="Password" required>
+                <span class="erro" id="erro-senha"></span>
+                
+                <p><a href="#" id="esquecer">Esqueci a senha</a></p>
+                <button type="submit" id="entrar">Entrar</button>
+                <p><a href="#" id="criarConta">Criar conta</a></p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const form = document.getElementById('formulario');
+        const email = document.getElementById('email');
+        const senha = document.getElementById('senha');
+
+        const erroEmail = document.getElementById('erro-email');
+        const erroSenha = document.getElementById('erro-senha');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // impede enviar até validar tudo
+
+            let valido = true;
+
+            if (email.value.trim() === "") {
+                erroEmail.textContent = "Digite seu e-mail."
+                valido = false;
+            } else {
+                erroEmail.textContent = "";
+            }
+
+            if (senha.value.length < 6) {
+                erroSenha.textContent = "A senha precisa ter no mínimo 6 caracteres.";
+                valido = false;
+            } else {
+                erroSenha.textContent = "";
+            }
+
+            if (valido) {
+                alert("Login enviado com sucesso!");
+                form.submit();
+            }
+        });
+    </script>
+</body>
+</html>
