@@ -13,7 +13,19 @@
             font-size: 1em;
             font-weight: bolder;
             cursor: pointer;
+            background-color: #D0B3FF;
+        }
+
+        button:hover {
             background-color: #F8D8E7;
+        }
+
+        p {
+            display: none;
+            font-weight: bolder;
+            background-color: #E6D6FF;
+            padding: 5px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -23,7 +35,20 @@
         Quando clicar no botão: escreva no <p> "Carregado!"-->
     <section>
         <h2>Mensagem depois de 2 segundos</h2>
-        <button type="button">Clique!</button>
+        <button type="button" id="botao">Clique!</button>
+        <p id="msg"></p>
     </section>
+
+    <script>
+        const botao = document.getElementById('botao');
+        const msg = document.getElementById('msg');
+
+        botao.addEventListener("click", () => {
+            setTimeout(() => {
+                msg.innerHTML = 'Carregado!';
+                msg.style.display = 'block';
+            }, 2000);
+        })
+    </script>
 </body>
 </html>
