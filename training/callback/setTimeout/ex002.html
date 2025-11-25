@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div#quadrado {
+            height: 200px;
+            width: 200px;
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+
+        p {
+            color: #F8D8E7;
+        }
+    </style>
+</head>
+<body>
+    <!-- EXERCÍCIO 2 — Trocar cor com atraso
+        Crie um quadrado (div); Quando clicar nele: 
+        ele vira ROXO depois de 1s; 
+        depois de 1s, vira PRETO; 
+        (todos usando setTimeout com callbacks);  -->
+    
+        <section>
+            <div id="quadrado"></div>
+            <p>// Clique no quadrado para mudar de cor.</p>
+        </section>
+
+        <script>
+            const quadrado = document.getElementById('quadrado');
+
+            quadrado.addEventListener("click", () => {
+                setTimeout(() => {
+                    quadrado.style.background = '#60039da1';
+
+                    setTimeout(() => {
+                        quadrado.style.background = 'black';
+                    }, 1000);
+                }, 1000);
+            });
+        </script>
+</body>
+</html>
