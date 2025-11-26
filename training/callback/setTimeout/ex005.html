@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando página</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button {
+                width: 150px;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 1em;
+                font-weight: bolder;
+                cursor: pointer;
+                background-color: #D0B3FF;
+            }
+            button:hover {
+                background-color: #F8D8E7;
+            }
+
+            p {
+                background-color: #F8D8E7;
+                padding: 5px;
+                display: none;
+            }
+    </style>
+</head>
+<body>
+    <!-- EXERCÍCIO 5 — Simular carregamento de página
+        Botão: “Carregar dados”
+        Parágrafo: <p id="res"></p>        
+        Quando clicar:        
+        res.innerText = "Carregando..."        
+        depois de 1500ms → callback mostra os dados -->
+
+    <section>
+        <button type="button" id="botao">Carregar dados</button>
+        <p id="res"></p>
+    </section>
+
+    <script>
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        botao.addEventListener("click", () => {
+            res.style.display = 'block';
+            res.innerHTML = 'Carregando...';
+
+            setTimeout(() => {
+                res.innerHTML = 'Spotify tocando: Wave to Earth'
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
