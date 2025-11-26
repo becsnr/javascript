@@ -18,8 +18,21 @@
             - "abc" -->
     
     <section>
-        <input type="text" name="caixa" id="caixa">
-        
+        <input type="text" name="caixa" id="caixa" placeholder="Digite apenas números">
     </section>
+
+    <script>
+        const caixa = document.getElementById('caixa');
+        const regex = /^[0-9]+$/;
+
+        caixa.addEventListener('input', () => {
+            const valor = caixa.value;
+
+            // se digitar algo diferente de n°, cai no if
+            if (!regex.test(valor)) {
+                caixa.value = valor.replace(/[^0-9]/g, "");
+            }
+        });
+    </script>
 </body>
 </html>
