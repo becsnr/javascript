@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #caixa {
+            width: 50px;
+            height: 50px;
+            background-color: #5f039d;
+        }
+
+        button {
+            width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bolder;
+            cursor: pointer;
+            background-color: #D0B3FF;
+        }
+
+        button:hover {
+            background-color: #F8D8E7;
+        }
+    </style>
+</head>
+<body>
+    <!-- EXERCÍCIO 4 — Animação fake
+        Crie uma <div> com tamanho 50px.
+        Quando clicar no botão:
+        depois de 500ms → aumenta para 80px
+        depois de 500ms → aumenta para 120px
+        depois de 500ms → aumenta para 150px -->
+
+    <section>
+        <div id="caixa"></div>
+        <button type="button" id="botao">Crescer</button>
+    </section>
+
+    <script>
+        const botao = document.getElementById('botao');
+        const caixa = document.getElementById('caixa');
+
+        botao.addEventListener("click", () => {
+            setTimeout(() => {
+                caixa.style.width = '80px';
+                caixa.style.height = '80px';
+
+                setTimeout(() => {
+                    caixa.style.width = '120px';
+                    caixa.style.height = '120px';
+
+                    setTimeout(() => {
+                        caixa.style.width = '150px';
+                        caixa.style.height = '150px';
+                    }, 500);
+                }, 500);
+            }, 500);
+        });
+    </script>
+</body>
+</html>
