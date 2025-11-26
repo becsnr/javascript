@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p {
+            background-color: #E6D6FF;
+            width: 20px;
+            height: 20px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bolder;
+            cursor: pointer;
+            background-color: #D0B3FF;
+        }
+
+        button:hover {
+            background-color: #F8D8E7;
+        }
+    </style>
+</head>
+<body>
+    <!-- EXERCÍCIO 3 — Contagem regressiva
+        HTML:
+        <p id="saida"></p>
+        <button id="iniciar">Iniciar</button>
+        Ao clicar:
+        aparecer: “3”
+        depois de 1s: “2”
+        depois de 1s: “1”
+        depois de 1s: “GO!”
+    -->
+    
+    <section>
+        <h2>Contagem regressiva</h2>
+        <p id="saida"></p>
+        <button id="iniciar">Iniciar</button>
+    </section>
+
+    <script>
+        const iniciar = document.getElementById('iniciar');
+        const saida = document.getElementById('saida');
+
+        let contador = 3;
+
+        iniciar.addEventListener("click", () => {
+            saida.innerHTML = '3';
+
+            setTimeout(() => {
+                saida.innerHTML = '2';
+
+                setTimeout(() => {
+                    saida.innerHTML = '1';
+
+                    setTimeout(() => {
+                        saida.innerHTML = 'GO!';
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
