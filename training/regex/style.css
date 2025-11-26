@@ -18,3 +18,11 @@ section {
     gap: 10px;
     height: 100vh;
 }
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: inset 1px 1px 5px #5f039d;
+    background-color: #E6D6FF;
+}
