@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button {
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bolder;
+            cursor: pointer;
+            background-color: #D0B3FF;
+        }
+        button:hover {
+            background-color: #F8D8E7;
+        }
+
+        p {
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+            width: auto;
+            height: 20px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body id="body">
+    <!-- EXERCÍCIO 6 — "Modo noturno automático"
+            Botão “Ativar modo noturno”.
+            Quando clicar:
+            aparece “Modo será ativado em 3s…”
+            depois de 3s (callback do setTimeout), mude:
+            background para preto
+            texto branco
+            mensagem “Modo ativado!” -->
+    
+    <section>
+        <button type="button" id="botao">Modo Noturno</button>
+        <p id="res"></p>
+    </section>
+
+    <script>
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+        const body = document.getElementById('body');
+
+        botao.addEventListener("click", () => {
+            res.style.backgroundColor = '#F8D8E7';
+
+            for (let i = 3; i >= 1; i--) {
+                setTimeout(() => {
+                   res.innerHTML = `Modo será ativado em ${i}s…`; 
+                }, (3 - i) * 1000);
+            };
+
+            setTimeout(() => {
+                res.innerHTML = 'Modo ativado!';
+
+                body.style.backgroundColor = '#5f039d';
+                body.style.color = 'white';
+                botao.style.backgroundColor = 'blueviolet';
+                botao.style.color = 'white';
+                res.style.backgroundColor = 'purple'
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
