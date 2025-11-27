@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p {
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+            width: auto;
+            height: 20px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encontre todas as vogais dentro de um texto
+        Use uma regex para localizar todas as vogais (a, e, i, o, u — maiúsculas ou minúsculas) dentro de uma frase.
+        Frase para testar:
+        "Banana roxa e azul" -->
+    
+    <section>
+        <input type="text" name="caixa" id="caixa">
+        <p id="res"></p>
+    </section>
+
+    <script>
+        const caixa = document.getElementById('caixa');
+        const res = document.getElementById('res');
+
+        const regex = /[aeiouAEIOU]/g;
+
+        caixa.addEventListener('input', () => {
+            const valor = caixa.value;
+
+            const vogais = valor.match(regex);
+
+            if (vogais) {
+                res.innerHTML = `Vogais encontradas: ${vogais.join(", ")}`;
+            } else {
+                res.innerHTML = "Nenhuma vogal encontrada."
+            }
+        });
+    </script>
+</body>
+</html>
