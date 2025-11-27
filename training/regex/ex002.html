@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Validar um nome simples (só letras e espaços)
+        Crie uma regex que permita apenas letras (A–Z) e espaços.
+        Ou seja: nada de números, emojis ou símbolos.
+        Exemplos aceitos:
+        "Jungkook"
+        "Jeon Jungkook"
+        Não aceitos:
+        "Jungkook123"
+        "Jungkook!" -->
+    <section>
+        <input type="text" name="caixa" id="caixa" placeholder="Digite seu nome">
+
+    </section>
+
+    <script>
+        const caixa = document.getElementById('caixa');
+
+        const regex = /^[a-zA-Z\s]+$/;
+
+        caixa.addEventListener('input', () => {
+            const valor = caixa.value;
+
+            if (!regex.test(valor)) {
+                caixa.value = valor.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
+            }
+        });
+
+        // ou usar apenas uma linha:
+        // caixa.value = caixa.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
+    </script>
+</body>
+</html>
