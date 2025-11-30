@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+    background-color: bisque;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 100vh;
+}
+
+input {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: 1px 1px 10px burlywood;
+}
+
+button {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12pt;
+    background-color: #f2cd9d;
+    border: none;
+    box-shadow: 1px 1px 5px #3d25057e;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #f1bf9b;
+}
+
+#explicacao {
+    color: #d2691e94;
+    margin: 0;
+}
