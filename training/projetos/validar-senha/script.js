@@ -1,0 +1,1 @@
+const caixaSenha = document.getElementById();
