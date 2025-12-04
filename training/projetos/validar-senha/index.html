@@ -8,14 +8,22 @@
 </head>
 <body>
     <section>
-        <p id="explicacao">
-            mínimo 6 caracteres <br>
-            ter letra <br>
-            ter número
+        <h1>Validador de Senha</h1>
+        <p>
+            <ul id="explicacao">
+                A senha deve conter
+                <li>mínimo 6 caracteres</li>
+                <li>ter ao menos 1 letra minúscula</li>
+                <li>ter ao menos 1 letra maiúscula</li>
+                <li>ter ao menos 1 número</li>
+            </ul>
         </p>
+
         <input type="password" name="senha" id="senha" placeholder="Digite a senha">
+
+        <p id="res"></p>
         
-        <button type="button">Validar</button>
+        <button type="button" id="botaoValidar">Validar</button>
     </section>
 
     <script src="script.js"></script>
