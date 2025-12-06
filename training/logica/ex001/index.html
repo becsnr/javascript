@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Par ou Ímpar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,6 +19,22 @@
 
     <h1>PAR OU ÍMPAR</h1>
     <input type="number" name="num" id="num" placeholder="Digite um número">
+    <button type="button" id="botao">Verificar</button>
     <div id="res"></div>
+
+    <script>
+        const numInput = document.getElementById('num');
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        botao.addEventListener("click", () => {
+            let num = numInput.value;
+            if (num % 2 === 0) {
+                res.innerHTML = `${num} é PAR`;
+            } else {
+                res.innerHTML = `${num} é ÍMPAR`;
+            }
+        });
+    </script>
 </body>
 </html>
