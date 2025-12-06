@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!--    ADIVINHAR O MAIOR
+        Você recebe dois números. Precisa descobrir:
+        - Qual deles é maior
+        - Ou se são iguais
+
+        Treina compareção (>, <, ===)
+    -->
+
+    <h1>Maior número</h1>
+    <input type="number" name="num1" id="num1" placeholder="Número 1">
+    <input type="number" name="num2" id="num2" placeholder="Número 2">
+    <button type="button" id="botao">Verificar</button>
+    <div id="res"></div>
+
+    <script>
+        const num1 = document.getElementById('num1');
+        const num2 = document.getElementById('num2');
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        botao.addEventListener("click", () => {
+            let n1 = num1.value;
+            let n2 = num2.value;
+
+            if (n1 > n2) {
+                res.innerHTML = `${n1} > ${n2}`;
+            } else if (n2 > n1) {
+                res.innerHTML = `${n2} > ${n1}`;
+            } else if (n1 === n2) {
+                res.innerHTML = `${n1} = ${n2}`;
+            }
+        });
+    </script>
+</body>
+</html>
