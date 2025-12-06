@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!--    CONTAR QUANTAS VOGAIS TEM NUMA PALAVRA
+        Exemplo: "morango" -> 3 vogais. Você precisa:
+        - Ler cada letra
+        - Ver se é vogal
+        - Somar
+
+        Treina pensamento de loop: "para cada letra, faça isso."
+    -->
+
+    <h1>Contar Vogais</h1>
+    <input type="text" name="palavra" id="palavra" placeholder="Digite uma palavra">
+    <button type="button" id="botao">Contar</button>
+    <div id="res"></div>
+
+    <script>
+        const word = document.getElementById('palavra');
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        
+        let vogais = /[aeiouAEIOU]/;
+
+        botao.addEventListener("click", () => {
+            const palavra = word.value;
+            let contador = 0;
+
+            for (let letra of palavra) {
+                if (vogais.test(letra)) {
+                    contador++;
+                }
+            }
+            
+            res.innerHTML = `Quantidade de Vogais: ${contador}`;
+        });
+    </script>
+</body>
+</html>
