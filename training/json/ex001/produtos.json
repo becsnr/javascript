@@ -1,5 +1,5 @@
 [
-    {"nome": "Gloss", "preco": "22,50"},
-    {"nome": "Esmalte", "preco": "15,60"},
-    {"nome": "Colar", "preco": "58,99"}
+    {"nome": "Gloss", "preco": 22},
+    {"nome": "Esmalte", "preco": 15},
+    {"nome": "Colar", "preco": 58}
 ]
