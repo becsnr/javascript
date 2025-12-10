@@ -35,3 +35,11 @@ button {
 button:hover {
     background-color: #e672bf;
 }
+
+#lista {
+    background-color: white;
+    width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 5px #7e085760;
+}
