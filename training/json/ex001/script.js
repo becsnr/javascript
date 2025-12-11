@@ -14,6 +14,6 @@ botao.addEventListener("click", () => {
 
                 soma += item.preco;
             });
-            lista.innerHTML += `<p>Total: R$ ${soma}</p>`;
+            lista.innerHTML += `<p><strong>Total</strong>: R$ ${soma},00</p>`;
         })
 })
