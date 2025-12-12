@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frase em Array</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Transformar frase em array</h1>
+    <input type="text" name="entrada" id="entrada" placeholder="Digite uma frase...">
+    <button type="button" id="botao">Transformar</button>
+
+    <div id="res"></div>
+
+    <script>
+        const entrada = document.getElementById('entrada');
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        botao.addEventListener("click", () => {
+            const frase = entrada.value;
+            const lista = frase.split(" ");
+
+            res.innerHTML = lista;
+            console.log(lista);
+        });
+    </script>
+</body>
+</html>
