@@ -32,6 +32,7 @@
         nomeShow.innerHTML = nomes;
 
         botao.addEventListener("click", () => {
+            saida.innerHTML = '';
             nomes.forEach(nome => {
                 saida.innerHTML += `<p>- ${nome}</p>`;
             });
