@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar nomes com traços</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        h2, #nomeShow {
+            color: white;
+            text-shadow: 1px 5px 10px #3344b6;
+        }
+
+        #nomeShow {
+            color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h2>array de nomes:</h2>
+    <p id="nomeShow"></p>
+    <button type="button" id="botao">Traço</button>
+    <div id="saida"></div>
+
+    <script>
+        const nomeShow = document.getElementById('nomeShow');
+        const botao = document.getElementById('botao');
+        const saida = document.getElementById('saida');
+
+        const nomes = ["Jesus", "Jungkook", "Luna", "Violeta"];
+
+        nomeShow.innerHTML = nomes;
+
+        botao.addEventListener("click", () => {
+            nomes.forEach(nome => {
+                saida.innerHTML += `<p>- ${nome}</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
