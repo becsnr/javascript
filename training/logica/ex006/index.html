@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar palavra</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <input type="text" name="entrada" id="entrada" placeholder="Digite uma frase">
+    <button type="button" id="botao">Trocar</button>
+    <div id="saida"></div>
+
+    <script>
+        const entrada = document.getElementById('entrada');
+        const saida = document.getElementById('saida');
+        const botao = document.getElementById('botao');
+
+        botao.addEventListener("click", () => {
+            const frase = entrada.value;
+            const troca = frase.replace("você", "Jesus");
+            
+            saida.innerHTML = troca;
+        });
+    </script>
+</body>
+</html>
