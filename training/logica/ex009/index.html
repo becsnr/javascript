@@ -25,7 +25,23 @@
         const saida = document.getElementById('saida');
 
         botao.addEventListener("click", () => {
+            const valor = entrada.value;
+            const lista = valor.split(",");
+
+            const menores = [];
             
+            lista.forEach(nome => {
+                const nomes = nome.trim();
+
+                if (nomes.length <= 4) {
+                    menores.push(nome);
+                    
+                } else {
+                    saida.innerHTML = 'Não tem nome de até 4 letras!'
+                }
+            });
+            
+            saida.innerHTML = `<p>${menores}</p>`;
         });
     </script>
 </body>
