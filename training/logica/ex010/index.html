@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <input type="text" name="entrada" id="entrada">
+    <input type="text" name="entrada" id="entrada" placeholder="Digite algo...">
     <div id="saida"></div>
 
     <script>
         const entrada = document.getElementById('entrada');
         const saida = document.getElementById('saida');
 
-        const valor = entrada.value;
-        
-        saida.innerHTML += valor;
-
-        
+        entrada.addEventListener("input", () => {
+            const total = entrada.value.length;
+            
+            saida.innerHTML = `Você digitou ${total} caracteres`;
+        })
     </script>
 </body>
 </html>
