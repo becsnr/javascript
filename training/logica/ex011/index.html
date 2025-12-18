@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <input type="number" name="entrada" id="entrada" placeholder="Sua idade">
+    <button type="button" id="botao">Verificar</button>
+    <div id="res"></div>
+
+    <script>
+        const entrada = document.getElementById('entrada');
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        botao.addEventListener("click", () => {
+            const idade = entrada.value;
+
+            idade >= 18 ? res.innerHTML = `Você é MAIOR de idade!` : res.innerHTML = `Você é MENOR de idade!`;
+        });
+    </script>
+</body>
+</html>
