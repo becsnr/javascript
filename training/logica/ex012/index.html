@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senha</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Avaliador de senha</h1>
+    <input type="password" name="entrada" id="entrada">
+    <div id="res"></div>
+
+    <script>
+        const senha = document.getElementById('entrada');
+        const res = document.getElementById('res');
+
+        senha.addEventListener("input", () => {
+            const tamanho = senha.length >= 6;
+            if (tamanho) {
+                res.innerHTML = "Senha FRACA";
+            } else {
+                res.innerHTML = "Senha forte";
+            }
+        });
+        
+    </script>
+</body>
+</html>
