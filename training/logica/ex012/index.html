@@ -16,12 +16,12 @@
         const res = document.getElementById('res');
 
         senha.addEventListener("input", () => {
-            const tamanho = senha.length >= 6;
-            if (tamanho) {
+            const tamanho = senha.length;
+            if (tamanho < 6) {
                 res.innerHTML = "Senha FRACA";
-            } else {
-                res.innerHTML = "Senha forte";
-            }
+            } // else {
+            //     res.innerHTML = "Senha forte";
+            // }
         });
         
     </script>
