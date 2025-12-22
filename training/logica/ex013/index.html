@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contem letra "a"</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    
+    <!-- VERIFICAR SE PALAVRA TEM LETRA "A" -->
+    <input type="text" name="entrada" id="entrada">
+    <button type="button" id="botao">Verificar</button>
+    <div id="res"></div>
+
+    <script>
+        const entrada = document.getElementById('entrada');
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        botao.addEventListener("click", () => {
+            
+            const palavra = entrada.value;
+
+            const vogal = palavra.match(/a/g);
+
+            if (vogal.length > 0) {
+                res.innerHTML = `Contém ${vogal.length} A`;
+            } else {
+                res.innerHTML = 'Não contém a letra "A"'
+            }
+
+           
+
+            
+        });
+    </script>
 </body>
 </html>
