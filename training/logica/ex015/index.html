@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <button type="button" id="botao">CLIQUE</button>
+    <button type="button" onclick="contarClique()" id="botao">CLIQUE</button>
     <div>
         <p id="res"></p>
     </div>
@@ -16,17 +16,19 @@
         const botao = document.getElementById('botao');
         const res = document.getElementById('res');
 
-        let cliques = 0;
+        let contador = 0;
 
-        botao.addEventListener('click', () => {
-            cliques++;
+        function contarClique() {
+            
+            if (contador === 5) {
+                res.innerHTML = 'Chega, já clicou demais!';
+                return;
+            } 
 
-            if (cliques == 5) {
-                res.innerHTML = 'Chega, já clicou demais!'
-            } else {
-                res.innerHTML = `Você clicou ${cliques} vezes.`;
-            }
-        });
+            contador++;
+
+            res.innerHTML = `Você clicou ${contador} vezes.`;
+        }
     </script>
 </body>
 </html>
