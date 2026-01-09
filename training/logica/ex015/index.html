@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <button type="button" id="botao">CLIQUE</button>
+    <div>
+        <p id="res"></p>
+    </div>
+
+    <script>
+        const botao = document.getElementById('botao');
+        const res = document.getElementById('res');
+
+        let cliques = 0;
+
+        botao.addEventListener('click', () => {
+            cliques++;
+
+            if (cliques == 5) {
+                res.innerHTML = 'Chega, já clicou demais!'
+            } else {
+                res.innerHTML = `Você clicou ${cliques} vezes.`;
+            }
+        });
+    </script>
+</body>
+</html>
