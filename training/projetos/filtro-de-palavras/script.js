@@ -5,7 +5,10 @@ const res = document.getElementById('res');
 botao.addEventListener('click', () => {
     let txt = texto.value;
 
-    let limpo = txt.replace(/[^a-zA-Z0-9À-ÿ\s]/g, "");
+    let limpo = txt.replace(/[^a-zA-Z0-9À-ÿ\s]/g, ""); // limpa simbolos
 
-    res.innerHTML = limpo;
+    let listaTxt = limpo.split(" "); // separa palavra por palavra e faz uma lista
+
+    res.innerHTML = listaTxt;
+    console.log(listaTxt)
 });
