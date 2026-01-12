@@ -9,6 +9,12 @@ botao.addEventListener('click', () => {
 
     let listaTxt = limpo.split(" "); // separa palavra por palavra e faz uma lista
 
-    res.innerHTML = listaTxt;
-    console.log(listaTxt)
+    setTimeout(() => {
+        res.innerHTML = 'Verificando...';
+        setTimeout(() => {
+            res.innerHTML = listaTxt;
+        }, 2000);
+    })
+    
+    
 });
