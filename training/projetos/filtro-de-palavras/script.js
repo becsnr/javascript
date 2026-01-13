@@ -9,12 +9,18 @@ botao.addEventListener('click', () => {
 
     let listaTxt = limpo.split(" "); // separa palavra por palavra e faz uma lista
 
-    setTimeout(() => {
-        res.innerHTML = 'Verificando...';
-        setTimeout(() => {
-            res.innerHTML = listaTxt;
-        }, 2000);
-    })
-    
-    
+    res.innerHTML = 'Verificando...';
+
+    fetch("palavroes.json")
+        .then(r => r.json())
+        .then(dados => {
+            let filtrado = listaTxt.filter(palavra => {
+                return !dados.palavroes.includes(palavra.toLowerCase());
+            });
+            
+
+            setTimeout(() => {
+                res.innerHTML = filtrado.join(" ");
+            }, 2000);
+        });
 });
