@@ -14,13 +14,20 @@ botao.addEventListener('click', () => {
     fetch("palavroes.json")
         .then(r => r.json())
         .then(dados => {
-            let filtrado = listaTxt.filter(palavra => {
-                return !dados.palavroes.includes(palavra.toLowerCase());
+            // censurar palavroes
+            let censurado = listaTxt.map(palavra => {
+                if (dados.palavroes.includes(palavra.toLowerCase())) {
+                    return "***";
+                };
+                return palavra;
             });
-            
 
             setTimeout(() => {
-                res.innerHTML = filtrado.join(" ");
+                res.innerHTML = censurado.join(" ");
             }, 2000);
+        })
+        .catch(erro => {
+            res.innerHTML = "Erro ao carregar palavras!";
         });
+        
 });
