@@ -12,11 +12,20 @@
     <input type="text" name="nome" id="nome" placeholder="Digite um nome...">
     <button type="button" id="salvarBtn">Salvar Nome</button>
     <p id="res"></p>
+    <p id="nomesSalvos"></p>
 
     <script>
         const nomeInput = document.getElementById('nome');
         const salvarBtn = document.getElementById('salvarBtn');
         const res = document.getElementById('res');
+        const nomesSalvos = document.getElementById('nomesSalvos');
+
+        // mostrar o nome salvo
+        const nome = localStorage.getItem("nome");
+
+        if (nome) {
+            nomesSalvos.innerHTML = `Olá, ${nome}`;
+        };
 
         salvarBtn.addEventListener("click", () => {
             
@@ -27,11 +36,15 @@
                 return;
             }
 
+            // salva o nome
             localStorage.setItem("nome", name);
 
-            res.innerHTML = `Nome "${name}" salvo com sucesso!`;
+            
 
-            nomeInput.value = ""; 
+            res.innerHTML = `Nome "${name}" salvo com sucesso!`;
+            
+
+            nomeInput.value = "";
         });
     </script>
 </body>
