@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            flex-direction: row;
+            font-size: 2em;
+        }
+
+        button {
+            width: 40px;
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        button#menos {
+            border-radius: 10px 0 0 10px;
+        }
+
+        button#mais {
+            border-radius: 0 10px 10px 0;
+        }
+
+        #res {
+            background-color: white;
+            width: 40px;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Exercício 4 — Contador persistente
+        Crie:
+        botão +
+        botão -
+        <p> mostrando o número
+        O número:
+        deve ser salvo no localStorage
+        não pode resetar ao recarregar -->
+
+    <button type="button" id="menos">-</button>
+    <p id="res">0</p>
+    <button type="button" id="mais">+</button>
+
+    <script>
+        const maisBtn = document.getElementById('mais');
+        const menosBtn = document.getElementById('menos');
+        const res = document.getElementById('res');
+
+        let cont = localStorage.getItem("contador");
+
+        if (cont === null) {
+            cont = 0;
+        } else {
+            cont = Number(cont);
+        }
+
+        res.innerHTML = cont;
+
+        maisBtn.addEventListener("click", () => {
+            cont++;
+            res.innerHTML = cont;
+            
+            localStorage.setItem("contador", cont);
+        });
+
+        menosBtn.addEventListener("click", () => {
+            cont--;
+            res.innerHTML = cont;
+
+            localStorage.setItem("contador", cont);
+        });
+    </script>
+</body>
+</html>
