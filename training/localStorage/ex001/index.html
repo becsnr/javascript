@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <!-- EXERCÍCIO 1 -- SALVAR NOME -->
     
+    <input type="text" name="nome" id="nome" placeholder="Digite um nome...">
+    <button type="button" id="salvarBtn">Salvar Nome</button>
+    <p id="res"></p>
+
+    <script>
+        const nomeInput = document.getElementById('nome');
+        const salvarBtn = document.getElementById('salvarBtn');
+        const res = document.getElementById('res');
+
+        salvarBtn.addEventListener("click", () => {
+            
+            const name = nomeInput.value;
+
+            if (name.trim() === "") {
+                res.innerHTML = "Digite um nome!";
+                return;
+            }
+
+            localStorage.setItem("nome", name);
+
+            res.innerHTML = `Nome "${name}" salvo com sucesso!`;
+
+            nomeInput.value = ""; 
+        });
+    </script>
 </body>
 </html>
