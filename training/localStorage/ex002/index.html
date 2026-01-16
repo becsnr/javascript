@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-color: #f6ddb1;
+        }
+
+        button {
+            background-color: #8e5e0c;
+        }
+
+        button:hover {
+            background-color: #593b06;
+        }
+
+        .modo-escuro {
+            background-color: #f4ad32;
+        }
+    </style>
+</head>
+<body>
+    <!-- EXERCÍCIO 2 -- MODO ESCURO -->
+
+    <button type="button" id="modoEscuro">Modo Escuro</button>
+
+    <script>
+        const modoEscuro = document.getElementById('modoEscuro');
+        const corpo = document.body;
+
+        const tema = localStorage.getItem("modo");
+        if (tema === "escuro") {
+            corpo.classList.add('modo-escuro');
+        };
+
+        modoEscuro.addEventListener("click", () => {
+            corpo.classList.add('modo-escuro');
+
+            localStorage.setItem("modo", "escuro");
+        });
+    </script>
+</body>
+</html>
