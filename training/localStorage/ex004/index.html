@@ -55,22 +55,23 @@
         const tarefaInput = document.getElementById('tarefa');
         const addBtn = document.getElementById('addBtn');
         const cardsContainer = document.getElementById('tarefasCards');
-        const item = document.getElementsByClassName('item');
 
-        const lista = JSON.parse(localStorage.getItem("tarefa")) || [];
-        // if (lista) {
-        //     localStorage.getItem(lista);
-        // }
+        const lista = JSON.parse(localStorage.getItem("tarefas")) || [];
+        
+        lista.forEach(tarefa => {
+            criarCards(tarefa);
+        });
 
         addBtn.addEventListener("click", () => {
-            const tarefa = tarefaInput.value;
+            const tarefa = tarefaInput.value.trim();
 
-            // if (tarefa == "")
+            if (tarefa === "") return;
 
-            localStorage.setItem("tarefa", JSON.stringify(tarefa));
             lista.push(tarefa);
+            localStorage.setItem("tarefas", JSON.stringify(lista));
             
             criarCards(tarefa);
+            tarefaInput.value = "";
         });
 
         function criarCards(tarefa) {
