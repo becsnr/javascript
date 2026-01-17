@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        div {
+            background-color: #3344b6;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        ul {
+            text-align: center;
+            width: 400px;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #5f57f7;
+            list-style: none;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- EXERCICIO 4 -- LISTA DE TAREFAS -->
+     <!--  
+        Crie:
+        input
+        botão Adicionar
+        <ul>
+        Quando adicionar:
+        salva as tarefas no localStorage
+        ao recarregar, a lista reaparece
+        ⚠️ Dica importante:
+        JSON.stringify()
+        JSON.parse()
+     -->
+
+    <input type="text" name="tarefa" id="tarefa">
+    <button type="button" id="addBtn">Adicionar</button>
+    <div id="container">
+        <h2>Suas Tarefas</h2>
+        <ul id="tarefasCards">
+            
+        </ul>
+    </div>
+
+    <script>
+        const tarefaInput = document.getElementById('tarefa');
+        const addBtn = document.getElementById('addBtn');
+        const cardsContainer = document.getElementById('tarefasCards');
+        const item = document.getElementsByClassName('item');
+
+        const lista = JSON.parse(localStorage.getItem("tarefa")) || [];
+        // if (lista) {
+        //     localStorage.getItem(lista);
+        // }
+
+        addBtn.addEventListener("click", () => {
+            const tarefa = tarefaInput.value;
+
+            // if (tarefa == "")
+
+            localStorage.setItem("tarefa", JSON.stringify(tarefa));
+            lista.push(tarefa);
+            
+            criarCards(tarefa);
+        });
+
+        function criarCards(tarefa) {
+            const card = document.createElement('li');
+            card.classList.add('item');
+            card.innerHTML = tarefa;
+
+            cardsContainer.appendChild(card);
+        };
+    </script>
+</body>
+</html>
