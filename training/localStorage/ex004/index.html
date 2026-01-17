@@ -24,23 +24,22 @@
             padding: 10px;
             margin: 10px;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .removeBtn {
+            font-size: .6em;
+            padding: 5px;
+            display: flex;
+            justify-content: flex-end;
         }
     </style>
 </head>
 <body>
     <!-- EXERCICIO 4 -- LISTA DE TAREFAS -->
-     <!--  
-        Crie:
-        input
-        botão Adicionar
-        <ul>
-        Quando adicionar:
-        salva as tarefas no localStorage
-        ao recarregar, a lista reaparece
-        ⚠️ Dica importante:
-        JSON.stringify()
-        JSON.parse()
-     -->
 
     <input type="text" name="tarefa" id="tarefa">
     <button type="button" id="addBtn">Adicionar</button>
@@ -79,6 +78,15 @@
             card.classList.add('item');
             card.innerHTML = tarefa;
 
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remover';
+            removeBtn.classList.add('removeBtn');
+
+            removeBtn.addEventListener("click", () => {
+                card.remove(card);
+            });
+
+            card.appendChild(removeBtn);
             cardsContainer.appendChild(card);
         };
     </script>
