@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico de buscas</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=history"/>
 </head>
 <body>
     <!-- EXERCÍCIO 5 - HISTÓRICO DE BUSCAS -->
@@ -23,11 +24,21 @@
     -->
     
     <section>
-        <h1>Beegle</h1>
-        <input type="text" name="texto" id="texto">
-        <button type="button">Pesquisa Beegle</button>
-        <div id="historico">
+        <div id="titulo">
+            <h1>Beegle</h1>
+        </div>
+
+        <div id="caixaPesquisa">
+            <input type="text" name="texto" id="texto">
+        </div>
+
+        <div id="buscar">
+            <button type="button" id="pesquisarBtn">Pesquisa Beegle</button>
+        </div>
+
+        <div class="historico">
             <h2>Histórico de pesquisa</h2>
+            <p><span class="material-symbols-outlined">history</span></p>
         </div>
     </section>
 </body>
