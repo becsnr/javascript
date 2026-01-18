@@ -57,9 +57,7 @@
 
         const lista = JSON.parse(localStorage.getItem("tarefas")) || [];
         
-        lista.forEach(tarefa => {
-            criarCards(tarefa);
-        });
+        renderizar();
 
         addBtn.addEventListener("click", () => {
             const tarefa = tarefaInput.value.trim();
@@ -69,26 +67,40 @@
             lista.push(tarefa);
             localStorage.setItem("tarefas", JSON.stringify(lista));
             
-            criarCards(tarefa);
+            renderizar();
             tarefaInput.value = "";
         });
 
-        function criarCards(tarefa) {
+        function criarCards(tarefa, index) {
             const card = document.createElement('li');
             card.classList.add('item');
-            card.innerHTML = tarefa;
+            card.textContent = tarefa;
 
             const removeBtn = document.createElement('button');
             removeBtn.textContent = 'Remover';
             removeBtn.classList.add('removeBtn');
 
             removeBtn.addEventListener("click", () => {
-                card.remove(card);
+                removerTarefa(index);
             });
 
             card.appendChild(removeBtn);
             cardsContainer.appendChild(card);
         };
+
+        function renderizar() {
+            cardsContainer.innerHTML = "";
+
+            lista.forEach((tarefa, index) => {
+                criarCards(tarefa, index);
+            });
+        };
+
+        function removerTarefa(index) {
+            lista.splice(index, 1);
+            localStorage.setItem("tarefas", JSON.stringify(lista));
+            renderizar();
+        }
     </script>
 </body>
 </html>
