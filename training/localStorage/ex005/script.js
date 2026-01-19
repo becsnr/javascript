@@ -10,7 +10,11 @@ renderizar();
 pesquisarBtn.addEventListener("click", () => {
     const texto = textoInput.value;
 
-    lista.push(texto);
+    lista.unshift(texto);
+    if (lista.length > 5) {
+        lista.pop();
+    };
+
     localStorage.setItem("pesquisas", JSON.stringify(lista));
     
     renderizar();
