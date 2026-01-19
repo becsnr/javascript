@@ -10,6 +10,8 @@ renderizar();
 pesquisarBtn.addEventListener("click", () => {
     const texto = textoInput.value;
 
+    if (texto === "") return;
+
     lista.unshift(texto);
     if (lista.length > 5) {
         lista.pop();
@@ -27,7 +29,6 @@ function criarHistorico(texto, index) {
     linha.textContent = texto;
 
     listaHistorico.appendChild(linha);
-    historico.appendChild(listaHistorico);
 };
 
 function renderizar() {
