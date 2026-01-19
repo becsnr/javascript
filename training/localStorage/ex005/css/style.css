@@ -45,19 +45,22 @@ button#pesquisarBtn:hover {
 #historico {
     background-color: #dadade75;
     border-radius: 10px;
-    
+}
+
+#historico h2 {
+    padding: 10px;
 }
 
 #listaHistorico {
     list-style: none;
     text-align: justify;
-    padding: 0;
-    
+    padding: 10px;
 }
 
 .linha {
     padding: 2px;
     width: 450px;
+    cursor: pointer;
 }
 
 .linha::before {
@@ -66,4 +69,8 @@ button#pesquisarBtn:hover {
     font-size: 20px;
     color: gray;
     margin-right: 10px;
+}
+
+.linha:hover {
+    background-color: #dadadeaf;
 }
