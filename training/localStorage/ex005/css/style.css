@@ -41,3 +41,29 @@ button#pesquisarBtn {
 button#pesquisarBtn:hover {
     border: solid 1px #0000005c;
 }
+
+#historico {
+    background-color: #dadade75;
+    border-radius: 10px;
+    
+}
+
+#listaHistorico {
+    list-style: none;
+    text-align: justify;
+    padding: 0;
+    
+}
+
+.linha {
+    padding: 2px;
+    width: 450px;
+}
+
+.linha::before {
+    font-family: 'Material Symbols Outlined';
+    content: "history";
+    font-size: 20px;
+    color: gray;
+    margin-right: 10px;
+}
