@@ -21,10 +21,22 @@ formLogin.addEventListener("submit", (event) => {
 });
 
 function renderizar(nome) {
-    titulo.innerHTML = `Bem-vindo(a), ${nome}`;
+    titulo.innerHTML = `Bem-vindo(a), ${nome}!`;
 
     nomeInput.style.display = "none";
 
-    entrarBtn.textContent = "Sair";
-    sairBtn.style.display = "none";
-}
+    entrarBtn.style.display = "none";
+    sairBtn.style.background = "black";
+    sairBtn.style.color = 'white';
+};
+
+sairBtn.addEventListener("click", () => {
+    if (nome) {
+        localStorage.removeItem('usuario');
+        titulo.innerHTML = 'Login';
+
+        nomeInput.style.display = "revert";
+        entrarBtn.style.display = "revert";
+        sairBtn.style = "revert";
+    };
+});
