@@ -1,0 +1,51 @@
+@charset "UTF=8";
+
+body {
+    background-color: #B3DFF4;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section {
+    background-image: linear-gradient(#CAF1FC, white);
+    /* height: 500px; */
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+input#nome {
+    background-color: #EFF2F7;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px #00000022;
+}
+
+/* BOTOES */
+
+.botoes {
+    width: 220px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 11pt;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#entrarBtn {
+    background-color: black;
+    color: white;
+}
+
+#sairBtn:hover {
+    background-color: #eff2f77a;
+}
