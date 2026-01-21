@@ -8,9 +8,17 @@ buscarBtn.addEventListener("click", () => {
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then(resp => resp.json())
         .then(dados => {
-            res.innerHTML = `CEP: ${dados.cep} <br>Cidade: ${dados.localidade} <br>Estado: ${dados.estado}`;
+            if (dados.erro) {
+                res.innerHTML = "CEP não encontrado";
+                return;
+            }
+            
+            res.innerHTML = 
+            `CEP: ${dados.cep} 
+            <br>Cidade: ${dados.localidade} 
+            <br>Estado: ${dados.estado}`;
         })
         .catch(erro => {
-            console.log("Erro ao buscar CEP!");
+            res.innerHTML = "Erro ao buscar CEP!";
         })
 });
