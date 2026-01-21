@@ -36,3 +36,8 @@ button#buscarBtn {
 button#buscarBtn:hover {
     background-color: #FFD93D;
 }
+
+#res {
+    line-height: 1.5em;
+    font-weight: bolder;
+}
