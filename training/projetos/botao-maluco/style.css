@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#botao {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 10px #00000055;
+    font-weight: bolder;
+    cursor: pointer;
+}
+#botao:hover {
+    background-color: #c4c3c3c7;
+}
