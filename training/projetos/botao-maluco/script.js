@@ -33,6 +33,10 @@ function caosMsg() {
 function caosCores() {
     const i = Math.floor(Math.random() * cores.length);
     document.body.style.backgroundColor = cores[i];
+    
+    if (i === 2) {
+        document.body.style.color = "white";
+    }
 }
 
 function caosTamanho() {
@@ -44,13 +48,33 @@ function caosMovimento() {
     modoFuga = true;
 }
 
+let piscando = false;
+let intervaloPisca;
+
+function caosRave() {
+    if (piscando) return;
+
+    piscando = true;
+
+    intervaloPisca = setInterval(() => {
+        const i = Math.floor(Math.random() * cores.length);
+        botao.style.backgroundColor = cores[i];
+    }, 300);
+
+    setTimeout(() => {
+        clearInterval(intervaloPisca);
+        piscando = false;
+    }, 3000);
+}
+
 function caosTotal() {
-    const sorteio = Math.floor(Math.random() * 4);
+    const sorteio = Math.floor(Math.random() * 5);
 
     if (sorteio === 0) caosMsg();
     if (sorteio === 1) caosCores();
     if (sorteio === 2) caosTamanho();
     if (sorteio === 3) caosMovimento();
+    if (sorteio === 4) caosRave();
 }
 
 botao.addEventListener("click", () => {
