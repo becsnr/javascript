@@ -25,3 +25,12 @@ function addNum(n) {
         res.innerText += n;
     }
 }
+
+function tratarOperador(op) {
+    if (op === "AC") {
+        // limpar tudo
+        res.innerText = "0";
+    } else if (op === "%") {
+        
+    }
+}
