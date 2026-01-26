@@ -13,6 +13,8 @@ body {
     padding: 10px;
     border-radius: 10px;
     border: none;
+    top: 350px;
+    left: 210px;
     box-shadow: 1px 1px 10px #00000055;
     font-weight: bolder;
     cursor: pointer;
