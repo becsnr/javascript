@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #c8a9df;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    gap: 10px;
+}
+
+h1, h2 {
+    color: #50035f;
+    text-shadow: 1px 1px 5px #ab6fb3;
+    text-align: center;
+}
+
+input#item {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #7c129144;
+}
+
+#botoes button {
+    background-color: #ab6fb3;
+    width: 100px;
+    padding: 5px;
+    color: #50035f;
+    font-weight: bolder;
+    font-size: .9em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #7c12913f;
+    cursor: pointer;
+}
+#botoes button:hover {
+    background-color: #ab6fb3d4;
+}
+
+#caixaLista {
+    background-color: #b27ccc;
+    color: #36104b;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #590d683f;
+}
+
+#lista {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+}
+
+#res {
+    background-color: #ca83d3;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
