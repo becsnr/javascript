@@ -1,6 +1,9 @@
 const teclado = document.querySelector('.teclado');
 const res = document.getElementById('res');
 
+let num = 0;
+let esperandoNovoNumero = false;
+
 teclado.addEventListener("click", (e) => {
     // se ñ for botão retorna
     if (e.target.tagName !== 'BUTTON') return;
@@ -19,8 +22,9 @@ teclado.addEventListener("click", (e) => {
 
 function addNum(n) {
     // apaga o zero e add o num clicado
-    if (res.innerText === "0") {
+    if (esperandoNovoNumero) {
         res.innerText = n;
+        esperandoNovoNumero = false;
     } else { // add os outros nums clicados sem apagar
         res.innerText += n;
     }
@@ -30,7 +34,17 @@ function tratarOperador(op) {
     if (op === "AC") {
         // limpar tudo
         res.innerText = "0";
-    } else if (op === "%") {
-        
+        num = 0;
+        esperandoNovoNumero = true;
+    } else if (op === "=") {
+        res.innerText = num;
+    } else if (op === "+") {
+       somar()
+       esperandoNovoNumero = true;
+       console.log(num)
     }
+}
+
+function somar() {
+    num += Number(res.innerText);
 }
