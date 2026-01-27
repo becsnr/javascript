@@ -13,16 +13,20 @@ addBtn.addEventListener("click", () => {
 
     listaSorteio.push(item);
 
-    showLista(item);
+    showLista();
     itemInput.value = '';
     res.innerHTML = '';
 });
 
-function showLista(i) {
-    const item = document.createElement('li');
-    item.innerText = i;
+function showLista() {
+    lista.innerHTML = '';
+    
+    listaSorteio.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = item;
 
-    lista.appendChild(item);
+        lista.appendChild(li);
+    })
 }
 
 sorteioBtn.addEventListener("click", () => {
@@ -38,5 +42,8 @@ sorteioBtn.addEventListener("click", () => {
     res.innerHTML = `O escolhido foi...`;
     setTimeout(() => {
         res.innerHTML += `<br>${sorteado}`;
+        showLista();
     }, 1000)
+
+    listaSorteio.splice(sorteio, 1); 
 });
