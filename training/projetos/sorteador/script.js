@@ -1,6 +1,7 @@
 const itemInput = document.getElementById('item');
 const addBtn = document.getElementById('addBtn');
 const sorteioBtn = document.getElementById('sorteioBtn');
+const lista = document.getElementById('lista');
 const res = document.getElementById('res');
 
 const listaSorteio = [];
@@ -11,8 +12,18 @@ addBtn.addEventListener("click", () => {
     if (item === '') return;
 
     listaSorteio.push(item);
+
+    showLista(item);
     itemInput.value = '';
+    res.innerHTML = '';
 });
+
+function showLista(i) {
+    const item = document.createElement('li');
+    item.innerText = i;
+
+    lista.appendChild(item);
+}
 
 sorteioBtn.addEventListener("click", () => {
     if (listaSorteio.length === 0) {
