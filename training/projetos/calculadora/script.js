@@ -1,7 +1,8 @@
 const teclado = document.querySelector('.teclado');
 const res = document.getElementById('res');
 
-let num = 0;
+let total = 0; // guarda o número antigo
+let operador = null; // guarda qual botão foi clicado
 let esperandoNovoNumero = false;
 
 teclado.addEventListener("click", (e) => {
@@ -13,38 +14,65 @@ teclado.addEventListener("click", (e) => {
 
     if (!isNaN(valor)) {
         // se for numero
-        addNum(valor);
+        digitarNumero(valor);
     } else {
-        // se for operador
-        tratarOperador(valor);
+        // se ñ for numero
+        clicarOperador(valor);
     }
 });
 
-function addNum(n) {
+function digitarNumero(n) {
     // apaga o zero e add o num clicado
-    if (esperandoNovoNumero) {
+    if (res.innerText === "0" || esperandoNovoNumero) {
         res.innerText = n;
+        // qnd clicar em um operador, o próximo numero é novo
         esperandoNovoNumero = false;
-    } else { // add os outros nums clicados sem apagar
+    } else { 
+        // add os outros nums clicados sem apagar
         res.innerText += n;
     }
 }
 
-function tratarOperador(op) {
-    if (op === "AC") {
-        // limpar tudo
+function clicarOperador(op) {
+    if (op === "AC") { 
+        // limpar tudo e voltar pro começo
         res.innerText = "0";
-        num = 0;
+        total = 0;
+        operador = null;
+        esperandoNovoNumero = false;
+        return;
+    }
+
+    if (op === "+") {
+       total = Number(res.innerText); // guarda o núm da tela em total
+       operador = "+"; // lembra que o operador é +
+       esperandoNovoNumero = true; // avisa q o próximo núm é novo
+       return;
+    }
+
+    if (op === "-") {
+        total = Number(res.innerText);
+        operador = "-";
         esperandoNovoNumero = true;
-    } else if (op === "=") {
-        res.innerText = num;
-    } else if (op === "+") {
-       somar()
-       esperandoNovoNumero = true;
-       console.log(num)
+        return;
+    }
+    
+    if (op === "=") {
+        if (operador === "+") {
+            total = total + Number(res.innerText);
+        } else if (operador === "-") {
+            total = total - Number(res.innerText);
+        }
+        
+        res.innerText = total; // mostra o resultado
+        esperandoNovoNumero = true;
     }
 }
 
-function somar() {
-    num += Number(res.innerText);
-}
+// function somar() {
+//     num += Number(res.innerText);
+// }
+
+// function igual() {
+//     if (op)
+// }
