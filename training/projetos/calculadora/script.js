@@ -43,6 +43,7 @@ function clicarOperador(op) {
         return;
     }
 
+    // SOMA
     if (op === "+") {
        total = Number(res.innerText); // guarda o núm da tela em total
        operador = "+"; // lembra que o operador é +
@@ -50,29 +51,35 @@ function clicarOperador(op) {
        return;
     }
 
+    // DIMINUIR
     if (op === "-") {
         total = Number(res.innerText);
         operador = "-";
         esperandoNovoNumero = true;
         return;
     }
+
+    // DIVISÃO
+    if (op === "÷") {
+        total = Number(res.innerText);
+        operador = "÷";
+        esperandoNovoNumero = true;
+        return;
+    }
     
+    // RESULTADO
     if (op === "=") {
-        if (operador === "+") {
+        if (operador === "+") { // SOMA
             total = total + Number(res.innerText);
-        } else if (operador === "-") {
+
+        } else if (operador === "-") { // DIMINUIR
             total = total - Number(res.innerText);
+
+        } else if (operador === "÷") { // DIVISÃO
+            total = total / Number(res.innerText);
         }
         
         res.innerText = total; // mostra o resultado
         esperandoNovoNumero = true;
     }
 }
-
-// function somar() {
-//     num += Number(res.innerText);
-// }
-
-// function igual() {
-//     if (op)
-// }
