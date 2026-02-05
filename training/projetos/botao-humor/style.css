@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: system-ui, -apple-system,  sans-serif;
+}
+
+#humorBtn {
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    box-shadow: 1px 1px 10px #00000037;
+}
+#humorBtn:hover {
+    border: 1px solid black;
+}
+
+#res {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 10px #0000003b;
+}
