@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1 id="res">0</h1>
+    <div class="botoes">
+        <button type="button">-</button>
+        <button type="button">+</button>
+    </div>
+
+    <script>
+        const res = document.getElementById('res');
+        const botoes = document.querySelector('.botoes');
+
+        let cont = 0;
+
+        botoes.addEventListener("click", (e) => {
+            if (e.target.innerText === "-") {
+                cont--;
+            } else {
+                cont++;
+            }
+            
+            res.innerText = cont;
+        })
+    </script>
+</body>
+</html>
