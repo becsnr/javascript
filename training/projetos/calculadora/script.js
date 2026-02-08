@@ -25,8 +25,10 @@ function digitarNumero(n) {
     // apaga o zero e add o num clicado
     if (res.innerText === "0" || esperandoNovoNumero) {
         res.innerText = n;
+        
         // qnd clicar em um operador, o próximo numero é novo
         esperandoNovoNumero = false;
+        res.innerText += operador
     } else { 
         // add os outros nums clicados sem apagar
         res.innerText += n;
@@ -34,6 +36,10 @@ function digitarNumero(n) {
 }
 
 function clicarOperador(op) {
+    // if (op) {
+    //     res.innerText = total + operador + esperandoNovoNumero;
+    // }    
+
     if (op === "AC") { 
         // limpar tudo e voltar pro começo
         res.innerText = "0";
@@ -48,6 +54,7 @@ function clicarOperador(op) {
        total = Number(res.innerText); // guarda o núm da tela em total
        operador = "+"; // lembra que o operador é +
        esperandoNovoNumero = true; // avisa q o próximo núm é novo
+       
        return;
     }
 
