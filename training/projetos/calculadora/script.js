@@ -29,7 +29,12 @@ teclado.addEventListener("click", (e) => {
         // TOTAL
         if (valor === '=') {
             segundoNum = res.innerText;
-            calcular()
+            total = calcular(primeiroNum, operador, segundoNum);
+            
+            res.innerText = total;
+            primeiroNum = total;
+            esperandoNum = true;
+
             return;
         }
 
@@ -44,12 +49,13 @@ teclado.addEventListener("click", (e) => {
         }
 
         // LIMPAR TUDO
-        if (operador === 'AC') {
+        if (valor === 'AC') {
             res.innerText = '0';
             primeiroNum = null;
             segundoNum = null;
             operador = null;
             total = null;
+            esperandoNum = false;
             return;
         }
 
@@ -59,35 +65,22 @@ teclado.addEventListener("click", (e) => {
     }
 })
 
-function calcular() {
+function calcular(a, op, b) {
+    a = Number(a);
+    b = Number(b);
+    
     // SOMA
-    if (operador === '+') {
-        total = Number(primeiroNum) + Number(segundoNum);
-    }
+    if (op === '+') return a + b;
 
     // SUBTRAÇÃO
-    if (operador === '-') {
-        total = Number(primeiroNum) - Number(segundoNum);
-    }
+    if (op === '-') return a - b;
     
     // MULTIPLICAÇÃO
-    if (operador === 'x') {
-        total = Number(primeiroNum) * Number(segundoNum);
-    }
+    if (op === 'x') return a * b;
 
     // DIVISÃO
-    if (operador === '÷') {
-        total = Number(primeiroNum) / Number(segundoNum);
-    }
+    if (op === '÷') return a / b;
 
     // PORCENTAGEM
-    if (operador === '%') {
-        total = (Number(segundoNum) * Number(primeiroNum)) / 100;
-    }
-
-    res.innerText = total;
-
-    primeiroNum = total;
-    segundoNum = null;
-    esperandoNum = true;
+    if (op === '%') return (b * a) / 100;
 }
