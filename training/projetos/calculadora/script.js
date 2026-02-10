@@ -17,8 +17,6 @@ teclado.addEventListener("click", (e) => {
         if (esperandoNum) { // só entra aqui qnd clicar em um operador
             res.innerText = valor;
             esperandoNum = false;
-            
-            console.log(`primeiro: ${primeiroNum}`)
 
         } else if (res.innerText === '0') { // qnd o esperandoNum é false, vem direto pra ca
             res.innerText = valor;
@@ -27,15 +25,23 @@ teclado.addEventListener("click", (e) => {
         }
         
     } else { // qnd clicar em operador
+
+        // TOTAL
         if (valor === '=') {
             segundoNum = res.innerText;
-            console.log(`segundo: ${segundoNum}`);
-            console.log(`operador: ${operador}`)
             calcular()
             return;
         }
 
-        operador = valor;
+        // APAGAR DIGITO
+        if (valor === '⇐') {
+            res.innerText = res.innerText.slice(0, -1);
+
+            if (res.innerText === '') {
+                res.innerText = '0';
+            }
+            return;
+        }
 
         // LIMPAR TUDO
         if (operador === 'AC') {
@@ -47,6 +53,7 @@ teclado.addEventListener("click", (e) => {
             return;
         }
 
+        operador = valor;
         primeiroNum = res.innerText;
         esperandoNum = true;
     }
